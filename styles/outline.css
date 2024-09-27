@@ -48,6 +48,7 @@ body {
     text-underline: black;
     text-decoration-color: black;
 }
+
 .cv-container {
     position: relative;
     background-color: white;
@@ -55,13 +56,12 @@ body {
     height: 297mm;
     padding: 20mm;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: scroll;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
 }
-
-
 
 .cv-content {
     display: contents;
