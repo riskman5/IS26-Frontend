@@ -1,6 +1,37 @@
 @media screen and (max-width: 768px) {
-    .profile-photo {
+    .cv-content {
+        transform: scale(0.8);
+        transform-origin: top left;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cv-navigation {
         display: none;
+    }
+
+    .cv-container {
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: auto;
+        position: relative;
+    }
+
+    .cv-content {
+        transform: scale(0.8);
+        transform-origin: top left;
+        width: 120%;
+        height: 120%;
+        position: absolute;
+        margin: 10px;
+    }
+
+    body {
+        overflow-x: hidden;
     }
 }
 
@@ -37,13 +68,6 @@ body {
     font-weight: bold;
 }
 
-.cv-navigation a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-}
-
 .header-text a {
     color: black;
     text-underline: black;
@@ -62,10 +86,6 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-}
-
-.cv-content {
-    display: contents;
 }
 
 .header {
