@@ -10,6 +10,7 @@ body {
 .cv-navigation {
     position: absolute;
     width: 100%;
+    left: 0;
     top: -50px;
     border-bottom: 1px solid #ccc;
     padding: 10px;
