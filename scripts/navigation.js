@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     dropbtn.addEventListener('click', function(event) {
-        // event.preventDefault();
         dropdownContent.style.display = dropdownContent.style.display === 'grid' ? 'none' : 'grid';
     });
 
