@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var links = document.querySelectorAll('.cv-navigation a');
-    var dropbtn = document.getElementById('socials');
-    var dropdownContent = document.querySelector('.dropdown-content');
+    let links = document.querySelectorAll('.cv-navigation a');
+    let dropbtn = document.getElementById('socials');
+    let dropdownContent = document.querySelector('.dropdown-content');
 
-    links.forEach(function(link, index) {
+    links.forEach(function(link) {
         link.addEventListener('click', function(event) {
             links.forEach(function(link) {
                 link.classList.remove('active');
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     dropbtn.addEventListener('click', function(event) {
-        event.preventDefault();
+        // event.preventDefault();
         dropdownContent.style.display = dropdownContent.style.display === 'grid' ? 'none' : 'grid';
     });
 
