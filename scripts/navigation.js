@@ -22,4 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
             dropdownContent.style.display = 'none';
         }
     });
+
+    window.addEventListener('load', () => {
+        const [navigation] = performance.getEntriesByType('navigation');
+        const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart
+
+        const loadTimeElement = document.createElement('div');
+        loadTimeElement.textContent = `Время загрузки страницы: ${loadTime.toFixed()} мс`;
+
+        document.querySelector(".cv-content").appendChild(loadTimeElement);
+    });
 });
