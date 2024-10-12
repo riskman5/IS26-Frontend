@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let links = document.querySelectorAll('.cv-navigation a');
-    let dropbtn = document.getElementById('socials');
-    let dropdownContent = document.querySelector('.dropdown-content');
+    const links = document.querySelectorAll('.cv-navigation a');
+    const dropbtn = document.getElementById('socials');
+    const dropdownContent = document.querySelector('.dropdown-content');
 
     links.forEach(function(link) {
         link.addEventListener('click', function(event) {
