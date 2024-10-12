@@ -22,12 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    window.addEventListener('load', () => {
-        const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart
+    const loadTime = window.performance.timing.domLoading - window.performance.timing.navigationStart
 
-        const loadTimeElement = document.createElement('div');
-        loadTimeElement.textContent = `Время загрузки страницы: ${loadTime.toFixed()} мс`;
+    const loadTimeElement = document.createElement('div');
+    loadTimeElement.textContent = `Время загрузки страницы: ${loadTime.toFixed()} мс`;
 
-        document.querySelector(".cv-content").appendChild(loadTimeElement);
-    });
+    document.querySelector(".cv-content").appendChild(loadTimeElement);
 });
