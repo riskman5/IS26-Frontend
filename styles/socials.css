@@ -1,0 +1,19 @@
+#social-table {
+    display: none;
+    margin-top: 20px;
+}
+
+#social-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#social-table th, #social-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+#social-table th {
+    background-color: #f4f4f4;
+}
