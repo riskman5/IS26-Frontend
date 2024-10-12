@@ -24,7 +24,6 @@ document.addEventListener('load', function() {
     });
 
     window.addEventListener('load', () => {
-        const [navigation] = performance.getEntriesByType('navigation');
         const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart
 
         const loadTimeElement = document.createElement('div');
