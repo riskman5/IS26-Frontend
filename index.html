@@ -6,73 +6,84 @@
     <title>CV Сергея Бабенко</title>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/outline.css">
+    <link rel="stylesheet" href="styles/socials.css">
 </head>
 <body>
 <div class="cv-container">
     <nav class="cv-navigation">
-        <a href="index.html" class="active">Резюме</a>
-        <a href="#" id="social-links">Соц сети</a>
+        <a href="index.html" class="active" data-target=".resume">Резюме</a>
+        <div class="dropdown">
+            <a href="#" id="socials" class="dropbtn">Соц. сети</a>
+            <div class="dropdown-content">
+                <a href="https://t.me/riskman31"><img src="img/Telegram_black.png" alt="Telegram Icon" class="social-icon"> Telegram</a>
+                <a href="https://github.com/riskman5"><img src="img/Github_black.png" alt="Github Icon" class="social-icon"> GitHub</a>
+                <a href="https://www.instagram.com/riskman5_"><img src="img/Instagram_black.png" alt="Instagram Icon" class="social-icon"> Instagram</a>
+                <a href="https://vk.com/riskman31"><img src="img/VK_black.png" alt="VK Icon" class="social-icon"> VK</a>
+                <a href="https://steamcommunity.com/id/riskman5/"><img src="img/Steam_black.png" alt="Steam Icon" class="social-icon"> Steam</a>
+                <a href="#"><img src="img/Discord_black.png" alt="Discord Icon" class="social-icon"> Discord</a>
+            </div>
+        </div>
     </nav>
     <div class="cv-content">
-        <div class="header">
-            <div class="header-text">
-                <h1>Бабенко Сергей Сергеевич</h1>
-                <h2>Java Backend Developer</h2>
-                <p>Санкт-Петербург | sergj.babenko@gmail.com | <a href="https://t.me/riskman31">@riskman31</a></p>
+            <div class="header">
+                <div class="header-text">
+                    <h1>Бабенко Сергей Сергеевич</h1>
+                    <h2>Java Backend Developer</h2>
+                    <p>Санкт-Петербург | sergj.babenko@gmail.com | <a href="https://t.me/riskman31">@riskman31</a></p>
+                </div>
+                <img src="img/me.jpg" class="profile-photo" alt="Sergey Babenko">
             </div>
-            <img src="img/me.jpg" class="profile-photo" alt="Sergey Babenko">
-        </div>
 
-        <section class="about">
-            <h2>Обо мне</h2>
-            <p>Привет!
-                Я студент третьего курса университета ИТМО, направления
-                Информационные системы (Software Engineering). Активно
-                увлекаюсь программированием, всегда готов учиться чему-то
-                новому.
-                Являюсь инициативным, дисциплинированным,
-                коммуникабельным и открытым. Проявляю большой интерес к
-                Backend-разработке!</p>
-        </section>
-        <div class="skills-and-knowledge">
-        <section class="skills">
-            <h2>Навыки</h2>
-            <ul>
-                <li><strong>Java Core:</strong> Java SE 8+, Collection Framework, Stream API</li>
-                <li><strong>Системы сборки:</strong> Maven, Gradle</li>
-                <li><strong>Spring Boot 3:</strong> Spring Boot, Spring Mvc</li>
-                <li><strong>Базы данных:</strong> PostgreSQL, MongoDB, Redis</li>
-                <li><strong>Брокеры:</strong> Kafka</li>
-                <li><strong>Мониторинг</strong> Prometheus, Grafana</li>
-                <li><strong>Прочее:</strong> Docker, Git, JetBrains IDEs</li>
-            </ul>
-        </section>
+            <section class="about">
+                <h2>Обо мне</h2>
+                <p>Привет!
+                    Я студент третьего курса университета ИТМО, направления
+                    Информационные системы (Software Engineering). Активно
+                    увлекаюсь программированием, всегда готов учиться чему-то
+                    новому.
+                    Являюсь инициативным, дисциплинированным,
+                    коммуникабельным и открытым. Проявляю большой интерес к
+                    Backend-разработке!</p>
+            </section>
+            <div class="skills-and-knowledge">
+            <section class="skills">
+                <h2>Навыки</h2>
+                <ul>
+                    <li><strong>Java Core:</strong> Java SE 8+, Collection Framework, Stream API</li>
+                    <li><strong>Системы сборки:</strong> Maven, Gradle</li>
+                    <li><strong>Spring Boot 3:</strong> Spring Boot, Spring Mvc</li>
+                    <li><strong>Базы данных:</strong> PostgreSQL, MongoDB, Redis</li>
+                    <li><strong>Брокеры:</strong> Kafka</li>
+                    <li><strong>Мониторинг</strong> Prometheus, Grafana</li>
+                    <li><strong>Прочее:</strong> Docker, Git, JetBrains IDEs</li>
+                </ul>
+            </section>
 
-        <section class="knowledge">
-            <h2>Основные знания</h2>
-            <ul>
-                <li>Основы ООП</li>
-                <li>SOLID & GRASP</li>
-                <li>Структурные, порождающие и поведенческие паттерны</li>
-                <li>Монолитная архитектура</li>
-                <li>Микросервисная архитектура</li>
-                <li>Алгоритмы и структуры данных</li>
-            </ul>
-        </section>
-        </div>
-        <section class="experience">
-            <h2>Опыт</h2>
-            <a href="https://disk.yandex.ru/i/JkF7RMF0t3ciCw" class="ya-school-hyperlink" >Яндекс Школа Бэкенд Разработки 2024</a>
-            <p>Разрабатывал асинхронное взаимодействие с API,
-                используя Spring Webflux, настраивал авторизацию при
-                помощи OAuth 2.0, писал интеграционные и модульные
-                тесты.</p>
-        </section>
+            <section class="knowledge">
+                <h2>Основные знания</h2>
+                <ul>
+                    <li>Основы ООП</li>
+                    <li>SOLID & GRASP</li>
+                    <li>Структурные, порождающие и поведенческие паттерны</li>
+                    <li>Монолитная архитектура</li>
+                    <li>Микросервисная архитектура</li>
+                    <li>Алгоритмы и структуры данных</li>
+                </ul>
+            </section>
+            </div>
+            <section class="experience">
+                <h2>Опыт</h2>
+                <a href="https://disk.yandex.ru/i/JkF7RMF0t3ciCw" class="ya-school-hyperlink" >Яндекс Школа Бэкенд Разработки 2024</a>
+                <p>Разрабатывал асинхронное взаимодействие с API,
+                    используя Spring Webflux, настраивал авторизацию при
+                    помощи OAuth 2.0, писал интеграционные и модульные
+                    тесты.</p>
+            </section>
 
-        <section class="education">
-            <h2>Образование</h2>
-            <p>Бакалавриат, Разработка ПО, Университет ИТМО (2022-2026)</p>
-        </section>
+            <section class="education">
+                <h2>Образование</h2>
+                <p>Бакалавриат, Разработка ПО, Университет ИТМО (2022-2026)</p>
+            </section>
     </div>
     <script src="scripts/navigation.js"></script>
 </div>
