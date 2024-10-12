@@ -1,24 +1,3 @@
-@media screen and (max-width: 768px) {
-    .cv-content {
-        transform-origin: top left;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .profile-photo {
-        display: none;
-    }
-
-    .header {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .skills-and-knowledge {
-        flex-direction: column;
-    }
-}
-
 body {
     font-family: Arial, sans-serif;
     font-size: 18px;
@@ -114,4 +93,19 @@ body {
 .ya-school-hyperlink {
     color: black;
     text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+    .profile-photo {
+        display: none;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-and-knowledge {
+        flex-direction: column;
+    }
 }

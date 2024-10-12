@@ -18,3 +18,11 @@
     width: 20px;
     height: 20px;
 }
+
+@media screen and (max-width: 480px) {
+    .dropdown-content {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+}
