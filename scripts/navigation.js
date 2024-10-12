@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('load', function() {
     var links = document.querySelectorAll('.cv-navigation a');
     var dropbtn = document.getElementById('socials');
     var dropdownContent = document.querySelector('.dropdown-content');
