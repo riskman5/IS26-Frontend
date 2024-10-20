@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контактная форма</title>
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/outline.css">
+  <link rel="stylesheet" href="styles/socials.css">
+  <link rel="stylesheet" href="styles/contact.css">
+</head>
+<body>
+<div class="cv-container">
+  <nav class="cv-navigation">
+    <a href="index.html">Резюме</a>
+    <a href="contact.html" class="active">Связь со мной</a>
+    <div class="dropdown">
+      <a href="#" id="socials" class="dropbtn">Соц. сети</a>
+      <div class="dropdown-content">
+        <a href="https://t.me/riskman31"><img src="img/Telegram_black.png" alt="Telegram Icon" class="social-icon"> Telegram</a>
+        <a href="https://github.com/riskman5"><img src="img/Github_black.png" alt="Github Icon" class="social-icon"> GitHub</a>
+        <a href="https://www.instagram.com/riskman5_"><img src="img/Instagram_black.png" alt="Instagram Icon" class="social-icon"> Instagram</a>
+        <a href="https://vk.com/riskman31"><img src="img/VK_black.png" alt="VK Icon" class="social-icon"> VK</a>
+        <a href="https://steamcommunity.com/id/riskman5/"><img src="img/Steam_black.png" alt="Steam Icon" class="social-icon"> Steam</a>
+        <a href="#"><img src="img/Discord_black.png" alt="Discord Icon" class="social-icon"> Discord</a>
+      </div>
+    </div>
+  </nav>
+  <div class="cv-content">
+    <form id="contact-form">
+      <label for="name">Имя:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="message">Сообщение:</label>
+      <textarea id="message" name="message" required></textarea>
+      <button type="submit">Отправить</button>
+    </form>
+    <div id="current-questions">Текущие вопросы:</div>
+    <div id="messages-container"></div>
+  </div>
+  <script src="scripts/navigation.js"></script>
+  <script src="scripts/contact.js"></script>
+</div>
+</body>
+</html>
