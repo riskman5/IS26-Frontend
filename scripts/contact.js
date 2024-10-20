@@ -19,7 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const messages = JSON.parse(localStorage.getItem('messages')) || [];
         messages.forEach((msg, index) => {
             const messageElement = document.createElement('div');
-            messageElement.innerHTML = `<strong>${msg.name}:</strong> ${msg.message} <button class="delete-btn" data-index="${index}">Удалить</button>`;
+            messageElement.innerHTML = `
+                <strong>${msg.name}</strong>
+                <button class="delete-btn" data-index="${index}">🗑️</button>
+                <div class="message-text">${msg.message}</div>
+            `;
             messagesContainer.appendChild(messageElement);
         });
 
