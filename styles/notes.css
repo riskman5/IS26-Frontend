@@ -5,17 +5,17 @@
     margin: 20px;
 }
 
-#contact-form {
+#notes-form {
     display: flex;
     flex-direction: column;
 }
 
-#contact-form label {
+#notes-form label {
     font-weight: bold;
 }
 
-#contact-form input,
-#contact-form textarea {
+#notes-form input,
+#notes-form textarea {
     padding: 10px;
     margin: 15px 0;
     border: 1px solid #ccc;
@@ -27,12 +27,12 @@
     resize: none;
 }
 
-#contact-form input {
+#notes-form input {
     height: 40px;
     resize: none;
 }
 
-#contact-form button {
+#notes-form button {
     padding: 10px;
     background-color: #4f4f4f;
     color: white;
@@ -45,7 +45,7 @@
     margin-bottom: 20px;
 }
 
-#contact-form button:hover {
+#notes-form button:hover {
     background-color: #050505;
 }
 

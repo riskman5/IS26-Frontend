@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contact-form');
+    const form = document.getElementById('notes-form');
     const messagesContainer = document.getElementById('messages-container');
 
     form.addEventListener('submit', function(event) {
