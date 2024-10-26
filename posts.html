@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Контактная форма</title>
+  <title>Посты</title>
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/outline.css">
   <link rel="stylesheet" href="styles/socials.css">
-  <link rel="stylesheet" href="styles/notes.css">
+  <link rel="stylesheet" href="styles/posts.css">
 </head>
 <body>
 <div class="cv-container">
   <nav class="cv-navigation">
     <a href="index.html">Резюме</a>
-    <a href="notes.html" class="active">Заметки</a>
+    <a href="notes.html">Заметки</a>
+    <a href="posts.html" class="active">Посты</a>
     <div class="dropdown">
-      <a href="posts.html">Посты</a>
       <a href="#" id="socials" class="dropbtn">Соц. сети</a>
       <div class="dropdown-content">
         <a href="https://t.me/riskman31"><img src="img/Telegram_black.png" alt="Telegram Icon" class="social-icon"> Telegram</a>
@@ -28,18 +28,11 @@
     </div>
   </nav>
   <div class="cv-content">
-    <form id="notes-form">
-      <label for="name">Имя:</label>
-      <input type="text" id="name" name="name" required maxlength="20">
-      <label for="message">Сообщение:</label>
-      <textarea id="message" name="message" required maxlength="150"></textarea>
-      <button type="submit">Отправить</button>
-    </form>
-    <div id="current-questions">Текущие замтеки:</div>
-    <div id="messages-container"></div>
+    <div class="preloader" id="preloader"></div>
+    <div id="posts-container"></div>
   </div>
   <script src="scripts/navigation.js"></script>
-  <script src="scripts/notes.js"></script>
+  <script src="scripts/fetchPosts.js"></script>
 </div>
 </body>
 </html>
