@@ -1,32 +1,32 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('notes-form');
-    const messagesContainer = document.getElementById('notes-container');
+    const notesContainer = document.getElementById('notes-container');
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
-        const name = document.getElementById('theme').value;
-        const message = document.getElementById('note').value;
+        const theme = document.getElementById('theme').value;
+        const note = document.getElementById('note').value;
         const priority = document.getElementById('priority').value;
 
-        const messages = JSON.parse(localStorage.getItem('notes')) || [];
-        messages.push({ name, message, priority });
-        localStorage.setItem('notes', JSON.stringify(messages));
+        const notes = JSON.parse(localStorage.getItem('notes')) || [];
+        notes.push({ theme, note, priority });
+        localStorage.setItem('notes', JSON.stringify(notes));
 
         displayMessages();
     });
 
     function displayMessages() {
-        messagesContainer.innerHTML = '';
-        const messages = JSON.parse(localStorage.getItem('notes')) || [];
-        messages.forEach((msg, index) => {
-            const messageElement = document.createElement('div');
-            messageElement.innerHTML = `
-                <strong>${msg.name}</strong>
+        notesContainer.innerHTML = '';
+        const notes = JSON.parse(localStorage.getItem('notes')) || [];
+        notes.forEach((note, index) => {
+            const noteElement = document.createElement('div');
+            noteElement.innerHTML = `
+                <strong>${note.theme}</strong>
                 <button class="delete-btn" data-index="${index}">🗑️</button>
-                <div class="notes-text">${msg.message}</div>
-                <div class="priority">${msg.priority === 'important' ? 'Важно!' : 'Не важно!'}</div>
+                <div class="notes-text">${note.note}</div>
+                <div class="priority">${note.priority === 'important' ? 'Важно!' : 'Не важно'}</div>
             `;
-            messagesContainer.appendChild(messageElement);
+            notesContainer.appendChild(noteElement);
         });
 
         const deleteButtons = document.querySelectorAll('.delete-btn');
@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function deleteMessage(index) {
-        const messages = JSON.parse(localStorage.getItem('notes')) || [];
-        messages.splice(index, 1);
-        localStorage.setItem('notes', JSON.stringify(messages));
+        const notes = JSON.parse(localStorage.getItem('notes')) || [];
+        notes.splice(index, 1);
+        localStorage.setItem('notes', JSON.stringify(notes));
         displayMessages();
     }
 
