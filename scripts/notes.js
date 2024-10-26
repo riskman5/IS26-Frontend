@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const deleteButton = document.createElement('button');
             deleteButton.classList.add('delete-btn');
-            deleteButton.setAttribute('data-index', index);
             deleteButton.textContent = '🗑️';
             deleteButton.addEventListener('click', () => {
                 deleteMessage(index);
