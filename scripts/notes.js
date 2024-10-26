@@ -15,26 +15,40 @@ document.addEventListener('DOMContentLoaded', function() {
         displayMessages();
     });
 
+    notesContainer.addEventListener('click', function(event) {
+        if (event.target.classList.contains('delete-btn')) {
+            const index = event.target.getAttribute('data-index');
+            deleteMessage(index);
+        }
+    });
+
     function displayMessages() {
         notesContainer.innerHTML = '';
         const notes = JSON.parse(localStorage.getItem('notes')) || [];
         notes.forEach((note, index) => {
             const noteElement = document.createElement('div');
-            noteElement.innerHTML = `
-                <strong>${note.theme}</strong>
-                <button class="delete-btn" data-index="${index}">🗑️</button>
-                <div class="notes-text">${note.note}</div>
-                <div class="priority">${note.priority === 'important' ? 'Важно!' : 'Не важно'}</div>
-            `;
-            notesContainer.appendChild(noteElement);
-        });
+            const themeElement = document.createElement('strong');
+            themeElement.textContent = note.theme;
 
-        const deleteButtons = document.querySelectorAll('.delete-btn');
-        deleteButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const index = this.getAttribute('data-index');
-                deleteMessage(index);
-            });
+            const deleteButton = document.createElement('button');
+            deleteButton.classList.add('delete-btn');
+            deleteButton.setAttribute('data-index', index);
+            deleteButton.textContent = '🗑️';
+
+            const noteText = document.createElement('div');
+            noteText.classList.add('notes-text');
+            noteText.textContent = note.note;
+
+            const priorityElement = document.createElement('div');
+            priorityElement.classList.add('priority');
+            priorityElement.textContent = note.priority === 'important' ? 'Важно!' : 'Не важно';
+
+            noteElement.appendChild(themeElement);
+            noteElement.appendChild(deleteButton);
+            noteElement.appendChild(noteText);
+            noteElement.appendChild(priorityElement);
+
+            notesContainer.appendChild(noteElement);
         });
     }
 
