@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             deleteButton.classList.add('delete-btn');
             deleteButton.setAttribute('data-index', index);
             deleteButton.textContent = '🗑️';
-            deleteButton.addEventListener('click', function() {
+            deleteButton.addEventListener('click', () => {
                 deleteMessage(index);
             });
 
