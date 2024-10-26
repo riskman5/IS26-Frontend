@@ -1,28 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('notes-form');
-    const messagesContainer = document.getElementById('messages-container');
+    const messagesContainer = document.getElementById('notes-container');
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
-        const name = document.getElementById('name').value;
-        const message = document.getElementById('message').value;
+        const name = document.getElementById('theme').value;
+        const message = document.getElementById('note').value;
+        const priority = document.getElementById('priority').value;
 
-        const messages = JSON.parse(localStorage.getItem('messages')) || [];
-        messages.push({ name, message });
-        localStorage.setItem('messages', JSON.stringify(messages));
+        const messages = JSON.parse(localStorage.getItem('notes')) || [];
+        messages.push({ name, message, priority });
+        localStorage.setItem('notes', JSON.stringify(messages));
 
         displayMessages();
     });
 
     function displayMessages() {
         messagesContainer.innerHTML = '';
-        const messages = JSON.parse(localStorage.getItem('messages')) || [];
+        const messages = JSON.parse(localStorage.getItem('notes')) || [];
         messages.forEach((msg, index) => {
             const messageElement = document.createElement('div');
             messageElement.innerHTML = `
                 <strong>${msg.name}</strong>
                 <button class="delete-btn" data-index="${index}">🗑️</button>
-                <div class="message-text">${msg.message}</div>
+                <div class="notes-text">${msg.message}</div>
+                <div class="priority">${msg.priority === 'important' ? 'Важно!' : 'Не важно!'}</div>
             `;
             messagesContainer.appendChild(messageElement);
         });
@@ -37,9 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function deleteMessage(index) {
-        const messages = JSON.parse(localStorage.getItem('messages')) || [];
+        const messages = JSON.parse(localStorage.getItem('notes')) || [];
         messages.splice(index, 1);
-        localStorage.setItem('messages', JSON.stringify(messages));
+        localStorage.setItem('notes', JSON.stringify(messages));
         displayMessages();
     }
 

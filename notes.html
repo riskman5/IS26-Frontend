@@ -28,14 +28,21 @@
   </nav>
   <div class="cv-content">
     <form id="notes-form">
-      <label for="name">Имя:</label>
-      <input type="text" id="name" name="name" required maxlength="20">
-      <label for="message">Сообщение:</label>
-      <textarea id="message" name="message" required maxlength="150"></textarea>
+      <label for="theme">Имя:</label>
+      <input type="text" id="theme" name="theme" required maxlength="20">
+      <label for="note">Сообщение:</label>
+      <textarea id="note" name="note" required maxlength="150"></textarea>
+      <div class="priority-form">
+        <label for="priority">Уровень важности заметки:</label>
+        <select id="priority" name="priority" required>
+          <option value="important">Важная</option>
+          <option value="not-important">Не важная</option>
+        </select>
+      </div>
       <button type="submit">Отправить</button>
     </form>
-    <div id="current-questions">Текущие замтеки:</div>
-    <div id="messages-container"></div>
+    <div id="current-notes">Текущие замтеки:</div>
+    <div id="notes-container"></div>
   </div>
   <script src="scripts/navigation.js"></script>
   <script src="scripts/notes.js"></script>
