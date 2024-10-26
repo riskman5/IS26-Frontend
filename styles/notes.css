@@ -49,12 +49,12 @@
     background-color: #050505;
 }
 
-#current-questions {
+#current-notes {
     margin: 15px 0;
     font-weight: bold;
 }
 
-#messages-container {
+#notes-container {
     width: 100%;
     max-width: 600px;
     padding: 15px;
@@ -62,7 +62,7 @@
     flex-direction: column;
 }
 
-#messages-container div {
+#notes-container div {
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -80,12 +80,12 @@
     word-wrap: break-word;
 }
 
-.message-text {
+.note-text {
     grid-area: message;
     word-break: break-word;
 }
 
-#messages-container div strong {
+#notes-container div strong {
     color: #4f4f4f;
     margin-bottom: 5px;
 }
@@ -99,4 +99,8 @@
 
 .delete-btn:hover {
     background-color: #050505;
+}
+
+.priority-form {
+    margin: 15px 0;
 }
