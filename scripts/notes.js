@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('notes-form');
-    const notesContainer = document.getElementById('notes-container');
+    let notesContainer = document.getElementById('notes-container');
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -15,15 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
         displayMessages();
     });
 
-    notesContainer.addEventListener('click', function(event) {
-        if (event.target.classList.contains('delete-btn')) {
-            const index = event.target.getAttribute('data-index');
-            deleteMessage(index);
-        }
-    });
-
     function displayMessages() {
-        notesContainer.innerHTML = '';
+        const newNotesContainer = notesContainer.cloneNode(false);
+        notesContainer.replaceWith(newNotesContainer);
+        notesContainer = newNotesContainer;
+
         const notes = JSON.parse(localStorage.getItem('notes')) || [];
         notes.forEach((note, index) => {
             const noteElement = document.createElement('div');
@@ -34,6 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
             deleteButton.classList.add('delete-btn');
             deleteButton.setAttribute('data-index', index);
             deleteButton.textContent = '🗑️';
+            deleteButton.addEventListener('click', function() {
+                deleteMessage(index);
+            });
 
             const noteText = document.createElement('div');
             noteText.classList.add('notes-text');
