@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('notes-form');
-    const notesContainer = document.getElementById('notes-container');
+    let notesContainer = document.getElementById('notes-container');
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -16,25 +16,37 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function displayMessages() {
-        notesContainer.innerHTML = '';
+        const newNotesContainer = notesContainer.cloneNode(false);
+        notesContainer.replaceWith(newNotesContainer);
+        notesContainer = newNotesContainer;
+
         const notes = JSON.parse(localStorage.getItem('notes')) || [];
         notes.forEach((note, index) => {
             const noteElement = document.createElement('div');
-            noteElement.innerHTML = `
-                <strong>${note.theme}</strong>
-                <button class="delete-btn" data-index="${index}">🗑️</button>
-                <div class="notes-text">${note.note}</div>
-                <div class="priority">${note.priority === 'important' ? 'Важно!' : 'Не важно'}</div>
-            `;
-            notesContainer.appendChild(noteElement);
-        });
+            const themeElement = document.createElement('strong');
+            themeElement.textContent = note.theme;
 
-        const deleteButtons = document.querySelectorAll('.delete-btn');
-        deleteButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const index = this.getAttribute('data-index');
+            const deleteButton = document.createElement('button');
+            deleteButton.classList.add('delete-btn');
+            deleteButton.textContent = '🗑️';
+            deleteButton.addEventListener('click', () => {
                 deleteMessage(index);
             });
+
+            const noteText = document.createElement('div');
+            noteText.classList.add('notes-text');
+            noteText.textContent = note.note;
+
+            const priorityElement = document.createElement('div');
+            priorityElement.classList.add('priority');
+            priorityElement.textContent = note.priority === 'important' ? 'Важно!' : 'Не важно';
+
+            noteElement.appendChild(themeElement);
+            noteElement.appendChild(deleteButton);
+            noteElement.appendChild(noteText);
+            noteElement.appendChild(priorityElement);
+
+            notesContainer.appendChild(noteElement);
         });
     }
 
