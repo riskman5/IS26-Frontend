@@ -18,17 +18,27 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => {
                 preloader.style.display = 'none';
-                postsContainer.innerHTML = `<p>⚠ Что-то пошло не так: ${error.message}</p>`;
+                const errorMessage = document.createElement('p');
+                errorMessage.textContent = `⚠ Что-то пошло не так: ${error.message}`;
+                postsContainer.appendChild(errorMessage);
             });
     }
 
     function renderPosts(posts) {
-        postsContainer.innerHTML = posts.map(post => `
-      <div class="post">
-        <h3>${post.title}</h3>
-        <p>${post.body}</p>
-      </div>
-    `).join('');
+        posts.forEach(post => {
+            const postDiv = document.createElement('div');
+            postDiv.className = 'post';
+
+            const postTitle = document.createElement('h3');
+            postTitle.textContent = post.title;
+            postDiv.appendChild(postTitle);
+
+            const postBody = document.createElement('p');
+            postBody.textContent = post.body;
+            postDiv.appendChild(postBody);
+
+            postsContainer.appendChild(postDiv);
+        });
     }
 
     fetchPosts();
