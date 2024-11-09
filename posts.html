@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Личные заметки</title>
+  <title>Посты</title>
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/outline.css">
   <link rel="stylesheet" href="styles/socials.css">
-  <link rel="stylesheet" href="styles/notes.css">
+  <link rel="stylesheet" href="styles/posts.css">
 </head>
 <body>
 <div class="cv-container">
   <nav class="cv-navigation">
     <a href="index.html">Резюме</a>
-    <a href="notes.html" class="active">Заметки</a>
+    <a href="notes.html">Заметки</a>
+    <a href="posts.html" class="active">Посты</a>
     <div class="dropdown">
-      <a href="posts.html">Посты</a>
       <a href="#" id="socials" class="dropbtn">Соц. сети</a>
       <div class="dropdown-content">
         <a href="https://t.me/riskman31"><img src="img/Telegram_black.png" alt="Telegram Icon" class="social-icon"> Telegram</a>
@@ -28,25 +28,11 @@
     </div>
   </nav>
   <div class="cv-content">
-    <form id="notes-form">
-      <label for="theme">Имя:</label>
-      <input type="text" id="theme" name="theme" required maxlength="20">
-      <label for="note">Сообщение:</label>
-      <textarea id="note" name="note" required maxlength="150"></textarea>
-      <div class="priority-form">
-        <label for="priority">Уровень важности заметки:</label>
-        <select id="priority" name="priority" required>
-          <option value="important">Важная</option>
-          <option value="not-important">Не важная</option>
-        </select>
-      </div>
-      <button type="submit">Отправить</button>
-    </form>
-    <div id="current-notes">Текущие замтеки:</div>
-    <div id="notes-container"></div>
+    <div class="preloader" id="preloader"></div>
+    <div id="posts-container"></div>
   </div>
   <script src="scripts/navigation.js"></script>
-  <script src="scripts/notes.js"></script>
+  <script src="scripts/fetchPosts.js"></script>
 </div>
 </body>
 </html>
