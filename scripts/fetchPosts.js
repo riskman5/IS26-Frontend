@@ -15,12 +15,14 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 preloader.style.display = 'none';
                 renderPosts(data);
+                toastr.success('Posts loaded successfully!');
             })
             .catch(error => {
                 preloader.style.display = 'none';
                 const errorMessage = document.createElement('p');
                 errorMessage.textContent = `⚠ Что-то пошло не так: ${error.message}`;
                 postsContainer.appendChild(errorMessage);
+                toastr.error(`Error: ${error.message}`);
             });
     }
 
@@ -31,6 +33,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const postTitle = document.createElement('h3');
             postTitle.textContent = post.title;
+            postTitle.style.cursor = 'pointer';
+            postTitle.addEventListener('click', () => {
+                Swal.fire({
+                    title: post.title,
+                    text: post.body,
+                    icon: 'info',
+                    confirmButtonText: 'Close'
+                });
+            });
             postDiv.appendChild(postTitle);
 
             const postBody = document.createElement('p');
